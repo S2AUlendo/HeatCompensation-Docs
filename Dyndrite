@@ -1,0 +1,84 @@
+---
+title: Dyndrite
+layout: home
+description: "An overview of the Dyndrite LPBF Integration."
+---
+
+# Dyndrite LPBF Integratiion
+This section provides an overview of how the Heat compensation plugin developed by Ulendo can be used with the Dyndrite LPBF system. 
+
+For ease of integration the Ulendo HC plugin has been developed as a pythom module which can be directly installed in the Dyndrite python environment. 
+
+## Installation
+To install the Ulendo HC plugin for Dyndrite LPBF
+
+1.  Download the package.
+2.  Copy the package to "C:\Users\Public\Documents\Dyndrite\modules".
+3.  Rename the folder "ulendohc"
+
+
+Run the following commands:
+```powershell
+cd ulendohc
+pip install ulendohc.
+```
+
+## Usage 
+The package can be used from either from the slicer callback or run directly from a standalone Python script. 
+
+### Standalone Mode
+There are three essential components to using the Ulendo HC plugin with the LPBF Pro framework
+
+1. import the installed Ulendo HC Library
+In the statement below, we import the module designed to interface with the LPBF Pro software, from ulendo heat compensation package, and name it "ss" short for SmartScan.
+```python
+import ulendohc.LPBFWrapper as ss
+```
+
+2. We initialize a new instance of the Heat Compensation LPBF Pro Interface
+```python
+sslpbf = ss.smartScanLBFPPro()
+```
+The instance can be initialized with the default parameters or additional parameters can be set or passed into the software. 
+In order of the usage the available parameters to configure the module, include:
+1.  Conductivity [W/mK]
+2.  Density [kg/m^3]
+3.  Heat Capacity [J/kgK]
+4.  Scanning speed [m/s]
+5.  Convection coefficient [W/m^2K]        
+6.  Laser power [W]
+
+```python
+sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100)
+```
+
+
+
+### Slicer Layer Callback Example
+```python
+def cb(ctx: dyn.VectorProcess, writer: dyn.VectorWriter, layer_idx):
+    print("Slicing Layer: " + str(layer_idx))
+
+    # DynDocs Within your Callback Function you can retrieve the initial group of unsorted and uncut fragments with
+    # Unsorted fragments for the rest of the layers
+    collection = ctx.get_fragments()
+
+    # Set default hatching parameters
+    stripeAngle = math.radians(stripeAngleVal * layer_idx)
+    hatching_params = vp.HatchingParameters(hatch_spacing=0.2, scan_angle=stripeAngle, hatch_length=1.0)    
+
+    # Cut all our fragments with a checkerboard pattern
+    collection = ctx.cut_fragments(fragments=collection, tiles=ctx.checkerboard_tiles(5, 5, 0), cut_tag="collection")
+
+    ctx.hatch_fragments(fragments=collection, hatching_params=hatching_params)
+    
+    # Call the smart scan plugin after the hatches are generated.
+    ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, use_Cache=False)  
+    orderFragView, unorderfragsView = collection.sort_with_complement_by_ids(ss_Ordered_Segments)   
+
+    # Write fragments
+    writer.write_fragments(fragments=orderFragView)
+
+    # Write perimeters
+    writer.write_perimeters(perimeters=ctx.perimeters
+```
