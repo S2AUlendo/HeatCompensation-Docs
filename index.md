@@ -3,8 +3,11 @@ title: Home
 layout: home
 ---
 
+# Ulendo HC
+
 These site provides an overview of the Heat Compensation Plugin Developed by Ulendo. 
 
+## Heat Compensation by Ulendo
 This heat compensation plugin is a part of the *compensation-based* technologies for additive manufacturing being developed by the Ulendo team. The heat compensation plugin is targetted specifically towards the optimizing the performance of Laser Power Bed Fusion (LPBF) machines.
 
 What does the Ulendo Heat Compensation Plugin Do?
@@ -20,18 +23,7 @@ You can read more about the performancee of smartScan through technical papers a
 
 The Ulendo Heat Compensation plugin is based on the algorthim developed by Chuan He at the University of Michigan's Sustainable Automation Laboraty.
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
 
-To get started with creating a site, simply:
-
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
-
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
-
-----
-
-[^1]: [Visit Ulendo.io to learn more](https://www.ulendo.io/).
 [Ulendo]: https://www.ulendo.io/
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
 [GitHub Pages]: https://docs.github.com/en/pages
