@@ -2,6 +2,7 @@
 layout: default
 title: Dyndrite
 description: "An overview of the Dyndrite LPBF Integration."
+nav_order: 2
 ---
 
 # Dyndrite LPBF Integratiion
