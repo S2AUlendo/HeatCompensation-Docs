@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dyndrite Slicer Layer Callback Integration
+title: Layer Callback 
 description: "An overview of the Dyndrite LPBF Integration."
 nav_order: 3
 ---
