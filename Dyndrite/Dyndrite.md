@@ -60,11 +60,11 @@ sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100)
 ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, use_Cache=False)  
 ```
 The function takes as parameters, the:
-1.     The collection of fragments, as an object provided by LPBF Pro software
-2.     The id of the layer currently being processed
-3.     The number of previous layers to use to in the optimization of the sequence (Optimal values between 2 and 20)
-4.     Use cache - whether or not to use an pre-initialized data to perform the optimization. This can work well for parts that nearly uniform throughout the layers
-5.     For espeically large builds setting a higher reduction level can help to signifcantly reduce the time required to perform the optimization.
+1. The collection of fragments, as an object provided by LPBF Pro software
+2. The id of the layer currently being processed
+3. The number of previous layers to use to in the optimization of the sequence (Optimal values between 2 and 20)
+4. Use cache - whether or not to use an pre-initialized data to perform the optimization. This can work well for parts that nearly uniform throughout the layers
+5. For espeically large builds setting a higher reduction level can help to signifcantly reduce the time required to perform the optimization.
 
 
 
