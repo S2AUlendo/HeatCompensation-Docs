@@ -4,15 +4,20 @@ title: Installation Overview
 description: "Installation Overview  of Ulendo HC Install for Dyndrite LPBF Pro."
 nav_order: 3
 ---
+# Installation
+Two installation options are provided.
 
-# Working with Obfuscated code: 
+## Working with obfuscated code: 
 1. Download the UlendoHC repository
 2. Extract the ulendohc folder from the downloaded package and place it into the Open File Explorer
 3. Copy the ulendohc repository to C:\Users\Public\Documents\Dyndrite\Python
 4. Ensure that the pyproject.toml file and Readme.md are also placed in the same folder 
 ```powershell
-    C:\Users\Public\Documents\Dyndrite\Python
+C:\Users\Public\Documents\Dyndrite\Python
 ```
+
+![image](https://github.com/S2AUlendo/HeatCompensation-Docs/assets/1342555/eb9c711c-8976-455a-b89b-eba7b50fdf97)
+
 5. To install the required dependencies open a new terminal and run the command. Be sure to the use the same python environment as the Dyndrite tool
 ```powershell
 ~python.exe -m pip install . 
