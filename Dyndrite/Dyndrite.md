@@ -28,14 +28,14 @@ sslpbf = ss.smartScanLBFPPro()
 ```
 The instance can be initialized with the default parameters or additional parameters can be set or passed into the software. 
 In order of the usage the available parameters to configure the module, include:
-<div class="parameters" markdown="1">
-1.  Conductivity [W/mK]
-2.  Density [kg/m^3]
-3.  Heat Capacity [J/kgK]
-4.  Scanning speed [m/s]
-5.  Convection coefficient [W/m^2K]        
-6.  Laser power [W]
-</div>
+    <div class="parameters" markdown="1">
+    1.  Conductivity [W/mK]
+    2.  Density [kg/m^3]
+    3.  Heat Capacity [J/kgK]
+    4.  Scanning speed [m/s]
+    5.  Convection coefficient [W/m^2K]        
+    6.  Laser power [W]
+    </div>
 ```python
 sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100)
 ```

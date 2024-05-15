@@ -2,7 +2,8 @@
 layout: default
 title: Installation Overview 
 description: "Installation Overview  of Ulendo HC Install for Dyndrite LPBF Pro."
-nav_order: 3
+parent: Dyndrite
+nav_order: 1
 ---
 # Installation
 Two installation options are provided.

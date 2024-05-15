@@ -2,7 +2,8 @@
 layout: default
 title: Layer Callback 
 description: "An overview of the Dyndrite LPBF Integration."
-nav_order: 3
+parent: Dyndrite
+nav_order: 2
 ---
 
 # Dyndrite LPBF Integratiion
