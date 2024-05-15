@@ -35,12 +35,4 @@ This section provides an overview of how the Ulendo HC functionality can be inte
  5. Paste the UlendoHC repository the Dyndrite Tool can import the modules when using Turbo mode
 ![Screenshot 2024-04-25 102049](https://github.com/S2AUlendo/HeatCompensation-Docs/assets/29451862/aed9848f-66c1-4495-948a-5c93011cd3b9)
  6. The Dyndrite Tool imports the library files from this location: C:\Users\Public\Documents\Dyndrite\Python, if the modules are missing or not imported properly, moving the modules to this folder location should work.
-
-# Working with Obfuscated code: 
- 1. Download the UlendoHC repository
- 2. Open File Explorer
- 3. Copy the UlendoHC repository to C:\Users\Public\Documents\Dyndrite\Python
- 4. Ensure that the pyproject.toml file and Readme.md are also placed in the same location (C:\Users\Public\Documents\Dyndrite\Python)
- 5. Right click on the folder and open command prompt or terminal
- 6. To install the required packages: “pip install .” (this will install all the necessary packages to run UlendoHC)
- 7. Navigate inside the ulendohc folder and copy the path of the current directory 
+ 

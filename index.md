@@ -19,8 +19,7 @@ This plugin is specifically developed to be integrated with the makers of Slicin
 
 You can read more about the performancee of smartScan through technical papers available here:
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+- Generalized SmartScan: An Intelligent LPBF Scan Sequence Optimization Approach for 3D Part Geometries by Chuan He, Bircan Bugdayci, Chinedum Okwudire. doi: 10.20944/preprints202311.0153.v1
 
 The Ulendo Heat Compensation plugin is based on the algorthim developed by Chuan He at the University of Michigan's Sustainable Automation Laboraty.
 

@@ -10,20 +10,6 @@ This section provides an overview of how the Heat compensation plugin developed 
 
 For ease of integration the Ulendo HC plugin has been developed as a pythom module which can be directly installed in the Dyndrite python environment. 
 
-## Installation
-To install the Ulendo HC plugin for Dyndrite LPBF
-
-1.  Download the package.
-2.  Copy the package to "C:\Users\Public\Documents\Dyndrite\modules".
-3.  Rename the folder "ulendohc"
-
-
-Run the following commands:
-```powershell
-cd ulendohc
-pip install ulendohc.
-```
-
 ## Usage 
 The package can be used from either from the slicer callback or run directly from a standalone Python script. 
 
@@ -94,5 +80,15 @@ def cb(ctx: dyn.VectorProcess, writer: dyn.VectorWriter, layer_idx):
     writer.write_fragments(fragments=orderFragView)
 
     # Write perimeters
-    writer.write_perimeters(perimeters=ctx.perimeters
+    writer.write_perimeters(perimeters=ctx.perimeters)
+
+directory="C:/Users/Public/Documents/Dyndrite"
+filepath=os.path.join(directory, "dyn_out.dvf")
+
+vp.slice_all(writers=dyn.DvfWriter(out_file=filepath), on_slice=cb)
+
+# Open Slice Viewer
+tab_id = dyn.gui.vector_slice_viewer.open_resource(path_or_stack=filepath)
+dyn.gui.vector_slice_viewer.set_envelope_from_plate(tab_id=tab_id, plate_dims=dyn.printer.plate)
+dyn.gui.vector_slice_viewer.center_on_point(tab_id=tab_id, point=(0, 0), zoom_level=0)
 ```
