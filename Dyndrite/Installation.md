@@ -25,6 +25,14 @@ C:\Users\Public\Documents\Dyndrite\Python
 ```
 7. Navigate inside the ulendohc folder and copy the path of the current directory
 
+### Requirements
+The UlendoHC module currently references these external modules:
+ - "cupy-cuda12x>=12.1.0"
+ - "numpy"   
+ - "scipy>=1.10" 
+ - "datetime"
+ - "matplotlib"
+
 
 ## Installation as a module (Not yet available)
 To install the Ulendo HC plugin for Dyndrite LPBF
