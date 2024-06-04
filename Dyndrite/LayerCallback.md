@@ -6,7 +6,7 @@ parent: Dyndrite
 nav_order: 2
 ---
 
-# Dyndrite LPBF Integratiion
+# Dyndrite LPBF Integration
 This section provides an overview of how the Ulendo HC functionality can be integrated with the LPBF Pro front end.
 
 # Placing User defined Callback: 

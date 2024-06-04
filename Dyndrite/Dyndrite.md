@@ -6,10 +6,10 @@ has_children: true
 nav_order: 2
 ---
 
-# Dyndrite LPBF Integratiion
+# Dyndrite LPBF Integration
 This section provides an overview of how the Heat compensation plugin developed by Ulendo can be used with the Dyndrite LPBF system. 
 
-For ease of integration the Ulendo HC plugin has been developed as a pythom module which can be directly installed in the Dyndrite python environment. 
+For ease of integration the Ulendo HC plugin has been developed as a python module which can be directly installed in the Dyndrite python environment. 
 
 ## Usage 
 The package can be used from either from the slicer callback or run directly from a standalone Python script. 
@@ -18,7 +18,7 @@ The package can be used from either from the slicer callback or run directly fro
 There are three essential components to using the Ulendo HC plugin with the LPBF Pro framework
 
 1. import the installed Ulendo HC Library
-In the statement below, we import the module designed to interface with the LPBF Pro software, from ulendo heat compensation package, and name it "ss" short for SmartScan.
+In the statement below, we import the module designed to interface with the LPBF Pro software, from Ulendo heat compensation package, and name it "ss" short for SmartScan.
 ```python
 import ulendohc.LPBFWrapper as ss
 ```
@@ -29,14 +29,14 @@ sslpbf = ss.smartScanLBFPPro()
 ```
 The instance can be initialized with the default parameters or additional parameters can be set or passed into the software. 
 In order of the usage the available parameters to configure the module, include:
-    <div class="parameters" markdown="1">
+
     1.  Conductivity [W/mK]
     2.  Density [kg/m^3]
     3.  Heat Capacity [J/kgK]
     4.  Scanning speed [m/s]
     5.  Convection coefficient [W/m^2K]        
     6.  Laser power [W]
-    </div>
+
 ```python
 sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100)
 ```
@@ -44,14 +44,15 @@ sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100)
 3. Once the module has been initialize, it can be called in the layer callback as shown below:
 
 ```python
-ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, use_Cache=False)  
+ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, RO=40, use_Cache=False)  
 ```
-The function takes as parameters, the:
+The function takes the following parameters:
 1. The collection of fragments, as an object provided by LPBF Pro software
 2. The id of the layer currently being processed
 3. The number of previous layers to use to in the optimization of the sequence (Optimal values between 2 and 20)
+4. The Reduced Order of the StateMatrix - RO Higher values enable more precise optimization, but may result in longer calculation times, and increased memory usage. The recommended max size is the size in mm of the part.
 4. Use cache - whether or not to use an pre-initialized data to perform the optimization. This can work well for parts that nearly uniform throughout the layers
-5. For espeically large builds setting a higher reduction level can help to signifcantly reduce the time required to perform the optimization.
+5. For especially large builds setting a higher reduction level can help to significantly reduce the time required to perform the optimization.
 
 
 
