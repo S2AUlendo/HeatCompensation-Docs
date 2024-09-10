@@ -17,13 +17,13 @@ The package can be used from either from the slicer callback or run directly fro
 ### Standalone Mode
 There are three essential components to using the Ulendo HC plugin with the LPBF Pro framework
 
-1. import the installed Ulendo HC Library
+1. Import the Ulendo HC package
 In the statement below, we import the module designed to interface with the LPBF Pro software, from Ulendo heat compensation package, and name it "ss" short for SmartScan.
 ```python
 import ulendohc.LPBFWrapper as ss
 ```
 
-2. We initialize a new instance of the Heat Compensation LPBF Pro Interface
+2. Initialize a new instance of the Heat Compensation LPBF Pro Interface
 ```python
 sslpbf = ss.smartScanLBFPPro()
 ```
@@ -38,20 +38,20 @@ In order of the usage the available parameters to configure the module, include:
     6.  Laser power [W]
 
 ```python
-sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100)
+sslpbf = ss.smartScanLBFPPro(kt=22.5, rho=7990, cp=500, vs=0.6, h=50, P=100,  port = 8001, host = "127.0.0.1")
 ```
 
-3. Once the module has been initialize, it can be called in the layer callback as shown below:
+The UlendoHC plugin will attempt to launch a local server listening on the host and running on Port 8001, if the port is available. Users can manually specify a hostname and a port to be used by configuring those options.
+
+1. Once the module has been initialize, it can be called in the layer callback as shown below:
 
 ```python
-ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, RO=40, use_Cache=False)  
+ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, n_layers=2, RO=40)  
 ```
 The function takes the following parameters:
 1. The collection of fragments, as an object provided by LPBF Pro software
-2. The id of the layer currently being processed
 3. The number of previous layers to use to in the optimization of the sequence (Optimal values between 2 and 20)
-4. The Reduced Order of the StateMatrix - RO Higher values enable more precise optimization, but may result in longer calculation times, and increased memory usage. The recommended max size is the size in mm of the part.
-4. Use cache - whether or not to use an pre-initialized data to perform the optimization. This can work well for parts that nearly uniform throughout the layers
+4. The Reduced Order of the StateMatrix - RO Higher values enable more precise optimization, but may result in longer calculation times, and increased memory usage. The recommended max size is the size in mm of the part in mm. Leave as default if you are not sure how this setting will affect your optimization.
 5. For especially large builds setting a higher reduction level can help to significantly reduce the time required to perform the optimization.
 
 
@@ -75,7 +75,7 @@ def cb(ctx: dyn.VectorProcess, writer: dyn.VectorWriter, layer_idx):
     ctx.hatch_fragments(fragments=collection, hatching_params=hatching_params)
     
     # Call the smart scan plugin after the hatches are generated.
-    ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, use_Cache=False)  
+    ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, n_layers=2)  
     orderFragView, unorderfragsView = collection.sort_with_complement_by_ids(ss_Ordered_Segments)   
 
     # Write fragments
@@ -94,3 +94,5 @@ tab_id = dyn.gui.vector_slice_viewer.open_resource(path_or_stack=filepath)
 dyn.gui.vector_slice_viewer.set_envelope_from_plate(tab_id=tab_id, plate_dims=dyn.printer.plate)
 dyn.gui.vector_slice_viewer.center_on_point(tab_id=tab_id, point=(0, 0), zoom_level=0)
 ```
+
+Note that the fragments must be cut and hatched before passing the collection to the UlendoHC plugin.
