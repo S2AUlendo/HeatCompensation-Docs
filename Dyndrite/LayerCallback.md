@@ -27,7 +27,9 @@ You can customize the UlendoHC callback to meet your needs if one of the predefi
 
  4. Open the newly created text document and place the path of the callback function and save the file 
  
-Note that custom callbacks located in the UlendoHC installation folder will be overwritten when new versions of the plugin are installed.
+> {: .note }
+  Note that custom callbacks located in the UlendoHC installation folder will be overwritten when new versions of the plugin are installed.
+
 
 ## Using the callback to optimize parts:
  1. Import the part, and configure your optimization and slicing parameters

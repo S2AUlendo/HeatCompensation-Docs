@@ -6,7 +6,7 @@ nav_order: 1
 
 # Ulendo HC
 
-These site provides an overview of the Heat Compensation Plugin Developed by Ulendo. 
+These site provides an overview of the Heat Compensation plugin developed by Ulendo. 
 
 ## Heat Compensation by Ulendo
 This heat compensation plugin is a part of the *compensation-based* technologies for additive manufacturing being developed by the Ulendo team. The heat compensation plugin is targeted specifically towards the optimizing the performance of Laser Power Bed Fusion (LPBF) machines.
