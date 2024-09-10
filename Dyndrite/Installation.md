@@ -9,20 +9,19 @@ nav_order: 1
 # Installation
 Locate the downloaded ulendohc_setup.exe file
 
+Select a directory to install the ulendohc plugin into.
 
+After installation, the installation folder will contain app.exe - a launchable application that is a self contained python applications which the python runtime and the dependent packages that are required for the core of the smartScan application. 
 
-![image](https://github.com/S2AUlendo/HeatCompensation-Docs/assets/1342555/eb9c711c-8976-455a-b89b-eba7b50fdf97)
-
-The installation package includes an encapsulated python package which also contains the the python runtime and the dependent packages. 
-This package also includes a python plugin "ulendohc" which will be installed into the python environment. 
-This installer will attempt to install the plugin into the Dyndrite environment using the following powershell command.
+This installation folder also includes a python plugin "ulendohc" which will be installed into the python environment. After the files are extracted the installer will attempt to install the python plugin into the Dyndrite environment using the following powershell command.
 
 ```powershell
 C:\Program Files\Dyndrite\Dyndrite\Binaries\Win64\python.exe -m pip install . 
 ```
+
 If you Dyndrite python environment is located in another directory, you can modify the path in the install.ps1 script and run the script with the updated package. Be sure to run this file from within the UlendoHC installation folder as it also creates a file and copies it to the Dyndrite environment.
 
-### Requirements
+### Dependencies 
 The UlendoHC module currently references these external modules:
  - "numpy"   
  - "scipy>=1.10" 
