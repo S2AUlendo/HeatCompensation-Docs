@@ -44,9 +44,11 @@ You can customize the UlendoHC callback to meet your needs if one of the predefi
  ![Screenshot 2024-04-25 101037](https://github.com/S2AUlendo/HeatCompensation-Docs/assets/29451862/86ec56a0-9fc7-41c0-b539-100bb9abd0a1)
 
 6. Click on Run and it should work with the User defined callback function
+
  ![Screenshot 2024-04-25 101151](https://github.com/S2AUlendo/HeatCompensation-Docs/assets/29451862/bd5e197f-f572-4768-a7ea-2f8f608e4157)
 
 7. The output file will be created in the current working directory 
+
  ![Screenshot 2024-04-25 102005](https://github.com/S2AUlendo/HeatCompensation-Docs/assets/29451862/a1124650-40fa-4057-a70e-d12ab812a28a)
 
 
