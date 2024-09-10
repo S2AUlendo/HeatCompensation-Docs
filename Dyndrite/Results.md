@@ -12,6 +12,6 @@ This section provides an overview of some of the early results shown by when opt
 The image below show a comparison of a part printed on the same machine using Stainless steel 316L. 
 
 When printing with Ulendo HC the part prints successfully. However, when printing without the optimized sequence the build fails. 
-![Part Comparison showing Ulendo HC optimized part printing and still functional, while the unoptimized build has failed.](<Ulendo HC.png>)
+![Part Comparison showing Ulendo HC optimized part printing and still functional, while the unoptimized build has failed.](<figure1b_part_comparison.png>)
 
 In other independent tests, this part proved to be a useful benchmark when comparing the performance of different slicers. This benchmark shows the clear potential of UlendoHC to be use to address some of the common failures in LPBF machines.

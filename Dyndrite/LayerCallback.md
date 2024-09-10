@@ -13,7 +13,7 @@ Using the callback requires that the ulendohc plugin be installed in the Dyndrit
 ## Using a user defined callback: 
 You can customize the UlendoHC callback to meet your needs if one of the predefined examples do not meet you needs. 
 
- 1. Navigate to 
+ 1. Navigate to: 
  ```
  C:\Users\Public\Documents\Dyndrite\Python\python_ui_scripts\VectorSlice
  ```

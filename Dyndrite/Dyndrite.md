@@ -95,4 +95,5 @@ dyn.gui.vector_slice_viewer.set_envelope_from_plate(tab_id=tab_id, plate_dims=dy
 dyn.gui.vector_slice_viewer.center_on_point(tab_id=tab_id, point=(0, 0), zoom_level=0)
 ```
 
-{: .note } Fragments must be cut and hatched before passing the collection to the UlendoHC plugin.
+> {: .note }
+  Fragments must be cut and hatched before passing the collection to the UlendoHC plugin.
