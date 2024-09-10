@@ -112,7 +112,7 @@ def cb(ctx: dyn.LayerContext, writer: dyn.VectorWriter, layer_idx):
     selection_fragments = collection.select_by_geometry_id(geometry_id=selection_id)    
     # print(f"Part 0 Collection: {len(selection_fragments)} ")
 
-    ss_Ordered_Segments = sslpbf.smartScanLPBF(selection_fragments, layer_idx, n_lyaers=2, use_Cache=True)  
+    ss_Ordered_Segments = sslpbf.smartScanLPBF(selection_fragments, n_layers=2)  
     orderFragView, unorderfragsView = collection.sort_with_complement_by_ids(ss_Ordered_Segments)                 
     # Write fragments
     writer.write_fragments(fragments=orderFragView)

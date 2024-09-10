@@ -91,7 +91,7 @@ def cb(ctx: dyn.LayerContext, writer: dyn.VectorWriter, layer_idx):
                                 drop_unmerged=False,
                                 overscan=0.0)
           
-    ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, layer_idx, n_lyaers=2, use_Cache=False)  
+    ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, n_layers=2)  
     orderFragView, unorderfragsView = collection.sort_with_complement_by_ids(ss_Ordered_Segments)   
 
     # Write fragments

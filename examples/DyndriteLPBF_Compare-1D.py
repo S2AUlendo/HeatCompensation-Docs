@@ -79,13 +79,11 @@ def cb(ctx: dyn.LayerContext, writer: dyn.VectorWriter, layer_idx):
     sorted_frags = collection
     print(f"Layer {layer_idx} total  collection for this layer: {len(collection)} ")
 
-
-
     # Do part 1 +++++
-    selection_id = ctx.get_geometry_id(obj=prt1)                # Select the second part and get the geometry id
+    selection_id = ctx.get_geometry_id(obj=prt1)                                        # Select the second part and get the geometry id
     selection_fragments = collection.select_by_geometry_id(geometry_id=selection_id)    # Filter the collection by the geometry ID
     # print(f"Part 1 Collection: {len(selection_fragments)} ")                             # Print the length of the collection to verify
-    sorted_frags = selection_fragments.sort_by_area()           # Apply a different sorting algorithm 
+    sorted_frags = selection_fragments.sort_by_area()                                       # Apply a different sorting algorithm 
     # Write perimeters
     writer.write_perimeters(perimeters=ctx.perimeters)
     # Write fragments
@@ -93,10 +91,10 @@ def cb(ctx: dyn.LayerContext, writer: dyn.VectorWriter, layer_idx):
 
     tic = time.perf_counter()
     # Do part 2  +++++
-    selection_id = ctx.get_geometry_id(obj=prt2)            # Select the second part and get the geometry id
-    selection_fragments = collection.select_by_geometry_id(geometry_id=selection_id)     # Filter the collection by the geometry ID
-    # print(f"Part 2 Collection: {len(selection_fragments)} ")                         # Print the length of the collection to verify
-    sorted_frags = selection_fragments.sort_by_perimeter()  # Apply a different sorting algorithm
+    selection_id = ctx.get_geometry_id(obj=prt2)                                        # Select the second part and get the geometry id
+    selection_fragments = collection.select_by_geometry_id(geometry_id=selection_id)    # Filter the collection by the geometry ID
+    # print(f"Part 2 Collection: {len(selection_fragments)} ")                          # Print the length of the collection to verify
+    sorted_frags = selection_fragments.sort_by_perimeter()                              # Apply a different sorting algorithm
     # Write perimeters
     writer.write_perimeters(perimeters=ctx.perimeters)
     # Write fragments
@@ -105,13 +103,13 @@ def cb(ctx: dyn.LayerContext, writer: dyn.VectorWriter, layer_idx):
     print(f"sort_by_perimeter {toc - tic:0.4f} seconds", 0)
 
     tic = time.perf_counter()
-    # Do part 0 +++++
+    # Do part 0 with Ulendo HC +++++
     selection_id = ctx.get_geometry_id(obj=prt0)
-    selection_fragments = collection.select_by_geometry_id(geometry_id=selection_id)    
-    # print(f"Part 0 Collection: {len(selection_fragments)} ")
+    selection_fragments = collection.select_by_geometry_id(geometry_id=selection_id)        
 
-    ss_Ordered_Segments = sslpbf.smartScanLPBF(selection_fragments, layer_idx, n_lyaers=2, use_Cache=True)  
+    ss_Ordered_Segments = sslpbf.smartScanLPBF(selection_fragments, n_lyaen_layersrs=2)  
     orderFragView, unorderfragsView = collection.sort_with_complement_by_ids(ss_Ordered_Segments)                 
+
     # Write fragments
     writer.write_fragments(fragments=orderFragView)
 
