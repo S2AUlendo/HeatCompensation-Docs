@@ -72,7 +72,7 @@ writer.write_fragments(fragments=laser_1_unorderfragsView)
 ```
 
 The image below shows a a multi-optic build using four lasers. Two of the regions on the right are optimized using Ulendo HC and the optic regions on the right use the default strategy. 
-![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/Single_Laser_assignment.png)
+![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/PartiallyOptimizedBuild.gif)
 
 
 
@@ -100,12 +100,11 @@ for key, value in tile_points_dict.items():
         writer.write_fragments(fragments=laser_1_unorderfragsView)  
 ```
 
-The image below shows a build where the overlapping regions of the layer have been excluded
-![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/PartiallyOptimizedBuild.gif)
-
-
-This image shows all of the features of the build.
+The image provides an example of the build area, and which areas are assigned to each laser. 
 ![All layer regions.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/Single_Laser_assignment_full.png)
+
+The image below shows a build where the overlapping regions of the layer have been excluded, and only the areas shown are optimized with Ulendo HC
+![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/Single_Laser_assignment.png)
 
 
 Fragments in the overlapping areas will be scanned using the typical strategy for avoiding collisions as recommended by Dyndrite
