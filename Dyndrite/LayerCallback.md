@@ -8,10 +8,10 @@ nav_order: 2
 
 # Dyndrite LPBF Integration
 This section provides an overview of how the Ulendo HC functionality can be integrated with the LPBF Pro front end.
-Using the callback requires that the ulendohc plugin be installed in the Dyndrite environment. See the installation guide to ensure that the ulendohc python plugin is installed in the Dyndrite environment.
+Using the callback requires that the ulendohc plugin be installed in the Dyndrite environment. See the installation guide to ensure that the Ulendo HC python plugin is installed in the Dyndrite environment.
 
 ## Using a user defined callback: 
-You can customize the UlendoHC callback to meet your needs if one of the predefined examples do not meet you needs. 
+You can customize the Ulendo HC callback to meet your needs if one of the predefined examples do not meet you needs. 
 
 1. Navigate to: 
  ```

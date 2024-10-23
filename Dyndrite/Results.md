@@ -3,7 +3,7 @@ layout: default
 title: Results
 description: "An overview of the Dyndrite LPBF Integration."
 parent: Dyndrite
-nav_order: 3
+nav_order: 4
 ---
 
 # Ulendo HC Results
