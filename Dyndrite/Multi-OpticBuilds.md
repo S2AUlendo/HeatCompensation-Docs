@@ -11,7 +11,7 @@ To optimize the distribution of heat within a layer, Ulendo HC re-orders the ord
 
 When running multi-optic builds this re-ordering can potentially conflict with constraints that are added during the slicing process, if all the segments are re-ordered independent of these constraints.
 
-The example below provides a guide on how Ulendo HC can be integrated with Multi-Optic systems within the Dyndrite Environment
+The example below provides a guide on how Ulendo HC can be integrated with Multi-Optic systems within the Dyndrite Environment.
 
 Import the Ulendo HC Plugin into the project
 
@@ -26,7 +26,7 @@ This should preserve the optimizations made to avoid potential collisions later 
 
 
 
-## Ulendo HC and Multi-Optic Overlapping
+## Ulendo HC and Multi-Optic Non-Overlapping Builds
 
 To effectively optimize for multi-optic systems it recommended to create multiple Ulendo HC Instances as shown in the following code
 
@@ -71,8 +71,15 @@ writer.write_fragments(fragments=laser_1_orderFragView)
 writer.write_fragments(fragments=laser_1_unorderfragsView)   
 ```
 
+The image below shows a a multi-optic build using four lasers. Two of the regions on the right are optimized using Ulendo HC and the optic regions on the right use the default strategy. 
+![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/Single_Laser_assignment.png)
 
-## Ulendo HC and Multi-Optic Overlapping
+
+
+## Ulendo HC and Multi-Optic Overlapping Builds
+
+When running builds that have regions that overlap it could potentially be good to limit the fragments that are optimized when using Ulendo HC, to fragments that can only be assigned to one laser. Using this option will exclude segments of the build that are close to different laser regions.
+
 ```python
 # Go through and write all fragments that only have one laser assignation
 for key, value in tile_points_dict.items():
@@ -93,9 +100,11 @@ for key, value in tile_points_dict.items():
         writer.write_fragments(fragments=laser_1_unorderfragsView)  
 ```
 
-![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/Single_Laser_assignment.png)
+The image below shows a build where the overlapping regions of the layer have been excluded
+![Regions that are optimized by Ulendo HC.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/PartiallyOptimizedBuild.gif)
 
 
+This image shows all of the features of the build.
 ![All layer regions.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/Single_Laser_assignment_full.png)
 
 
@@ -124,8 +133,3 @@ Fragments in the overlapping areas will be scanned using the typical strategy fo
                 writer.write_fragments(fragments=frags_to_write)
 ```
 
-
-In other independent tests, this part proved to be a useful benchmark when comparing the performance of different slicers. This benchmark shows the clear potential of UlendoHC to be use to address some of the common failures in LPBF machines.
-
-The image below shows a simulation of one of the layers of the part. You can see that at the same time, the segments of the part which have been already sintered differs between the HC optimized sequence and the default scan strategy. 
-![Part Comparison showing Ulendo HC optimized part printing and still functional, while the un-optimized build has failed.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/altered_sequence.png)
