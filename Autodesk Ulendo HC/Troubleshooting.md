@@ -8,7 +8,7 @@ nav_order: 5
 
 # How to Identify and Troubleshoot Common Faults  
 
-## Single Instance Limitation  
+### Single Instance Limitation  
 The app is designed to allow only one instance to run at a time. If a user attempts to launch the app while it is already running, a pop-up notification will appear, preventing multiple instances from operating simultaneously.  
 
 This ensures optimal performance and avoids potential conflicts during use.  
@@ -19,7 +19,7 @@ For more detailed troubleshooting, you can open a terminal window under `Tools` 
 ### Error Pop-Ups  
 The app includes error handling, so if an issue occurs during operation, such as a file error or server issue, the app will display a pop-up message describing the problem. This ensures users are notified immediately and can take appropriate action.  
 
-## License Key  
+### License Key  
 The UlendoHC plugin requires a license key for its first-time use and operation. On the first run of the app, the user will need to enter the license key into a dedicated screen.  
 
 ### Key Points About the License Key:  
