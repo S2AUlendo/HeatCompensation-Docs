@@ -2,7 +2,7 @@
 layout: default  
 title: Troubleshooting  
 description: "Troubleshooting common issues with the Ulendo HC app."  
-parent: Autodesk Ulendo HC  
+parent: Ulendo HC Desktop
 nav_order: 5 
 ---  
 
@@ -28,7 +28,7 @@ The UlendoHC plugin requires a license key for its first-time use and operation.
 - After entering the license key during the first run, it will be securely encrypted and stored on the computer.  
 - Subsequent runs of the app will automatically locate the license key, so re-entering it is unnecessary.  
 
-If your license key has expired, please contact your Ulendo account manager for assistance.  
+If your license key has expired, please purchase a new key, or contact your Ulendo account manager for assistance.  
 
 ## Need More Help?  
 If you need further assistance beyond the troubleshooting steps outlined here, please contact us at **info@ulendo.io** for advanced support.  

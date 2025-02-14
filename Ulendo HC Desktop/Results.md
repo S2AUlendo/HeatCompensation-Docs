@@ -22,7 +22,7 @@ The results section provides a side-by-side comparison of the pre-optimized and 
    - This helps visualize the order in which hatches are lasered during the printing process.
 4. **Heat Dissipation Visualization**:  
    - The app uses a fading color scheme to represent the relative timing of the lasered hatches in a layer.  
-   - Newly lasered hatches are displayed in **red**, gradually fading through **orange**, **yellow**, and finally to **green** to indicate that the heat has dissipated.  
+   - Newly lasered hatches are displayed in **red**, gradually fading through **purple**, and finally to **blue** to indicate that the heat has dissipated.  
    - **Note**: This is a conceptual representation of the heat dissipation and not an accurate heat map. Future updates will include a more realistic heat distribution model.
 
 The optimized sequence shown in the results demonstrates how the hatch patterns have been reordered to minimize localized heating and ensure uniform cooling across the layer. This improvement significantly enhances the overall print quality and reduces deformation risks, providing a reliable foundation for high-precision manufacturing.

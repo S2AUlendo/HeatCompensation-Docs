@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Autodesk Ulendo HC
+title: Ulendo HC Desktop
 description: "An overview of the Autodesk Ulendo HC."
 has_children: true
 nav_order: 2
 ---
 
-# Autodesk Ulendo HC Overview
-HC - Materialise is a powerful desktop application designed to optimize CLI files for Laser Powder Bed Fusion (LPBF) 3D printing. The tool provides an intuitive user interface to visualize and analyze CLI models before and after optimization, ensuring users can see the impact of the adjustments in real-time.
+# Ulendo HC Desktop Overview
+Ulendo HC Desktop is a powerful desktop application designed to optimize CLI files for Laser Powder Bed Fusion (LPBF) 3D printing. The tool provides an intuitive user interface to visualize and analyze CLI models before and after optimization, ensuring users can see the impact of the adjustments in real-time.
 
 The software supports various LPBF printer parameters and machine profiles, making it adaptable to different printer models and configurations. By intelligently reordering the hatch patterns within each layer of the CLI file, HC - Materialise ensures even heat distribution across the build surface. This process minimizes the risk of part deformation caused by uneven heating, leading to higher-quality prints with improved mechanical properties.
 
@@ -23,6 +23,10 @@ In order of the usage the available parameters to configure the module, include:
     4.  Scanning speed [m/s]
     5.  Convection coefficient [W/m^2K]        
     6.  Laser power [W]
+
+<div style="display: flex; gap: 10px;">
+  <img src="../assets/images/ulendo-hc-app-flow.png" alt="HC Flow Chart" width="400">
+</div>
 
 > {: .note }
   Fragments must be cut and hatched before passing the collection to the UlendoHC plugin.
