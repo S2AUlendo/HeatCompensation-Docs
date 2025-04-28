@@ -37,7 +37,7 @@ The UlendoHC module currently references these external modules:
  - "numpy"   
  - "scipy>=1.10" 
  - "datetime"
- - "matplotlib"
+ - "opencv"
  - "multiprocessing"
  - "requests"
 

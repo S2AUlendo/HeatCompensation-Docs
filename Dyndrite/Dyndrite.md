@@ -45,6 +45,15 @@ The UlendoHC plugin will attempt to launch a local server listening on the host 
 
 1. Once the module has been initialize, it can be called in the layer callback as shown below:
 
+
+    1. Create the mask of the entire build area
+```python
+sslpbf.createBuildAreaMask(collection)
+```
+This function allows HC to create a view over the entire build area, and assess all of the areas of the layer that will be scanned by the laser.
+
+Next optimize the segments. If the part only contains one region. The following code can be used to return the entire updated sequence.
+
 ```python
 ss_Ordered_Segments = sslpbf.smartScanLPBF(collection, n_layers=2, RO=40)  
 ```
@@ -53,6 +62,17 @@ The function takes the following parameters:
 3. The number of previous layers to use to in the optimization of the sequence (Optimal values between 2 and 20)
 4. The Reduced Order of the StateMatrix - RO Higher values enable more precise optimization, but may result in longer calculation times, and increased memory usage. The recommended max size is the size in mm of the part in mm. Leave as default if you are not sure how this setting will affect your optimization.
 5. For especially large builds setting a higher reduction level can help to significantly reduce the time required to perform the optimization.
+
+2. Multi-Region Optimization
+If the layer contains multiple regions, code like the example show below can be executed for each region. This allows HC to only optimize features which below to their specific region.
+
+```python
+for seg in downskin_seg:
+        new_seg = collection.select_by_segment(segment=seg)
+        optimized_Order = sslpbf.smartScanLPBF(new_seg, n_layers=2, reduced_Order=50)  
+        optimized_ordered_Fragments, unordered_fragments = collection.sort_with_complement_by_ids(optimized_Order)   
+        writer.write_fragments(fragments=optimized_ordered_Fragments)
+```
 
 
 
