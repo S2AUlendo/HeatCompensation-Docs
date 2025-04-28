@@ -6,7 +6,7 @@ parent: Dyndrite
 nav_order: 5
 ---
 
-# Initialize the plugin. 
+# A complete build using the plugin. 
 Integrating the UlendoHC optimizations into your workflow is simple. With only a few lines of code, it can be easily adapted into existing build files.
 In the example below, all of the changes required to integrate UlendoHc are marked using:
 ```python
@@ -286,8 +286,8 @@ def cb(ctx: dyn.LayerContext, writer: dyn.VectorWriter, layer_idx):
 
 
 # Use Custom CLI/DVF File Writer to Slice
-cwd = os.getcwd()
-outputFile = cwd + "/F1D_opt.dvf"
+directory = "C:/Users/Public/Documents/Dyndrite/UlendoHC"
+outputFile = directory + "/F1D_opt.dvf"
 vp.slice_all(writers=dyn.DvfWriter(out_file=outputFile), on_slice=cb)
 
 
