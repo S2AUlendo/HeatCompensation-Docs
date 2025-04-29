@@ -7,15 +7,23 @@ nav_order: 1
 ---
 
 # Installation
-Ulendo provides a visual based installer for windows platforms to use the Dyndrite LPBF Pro plugin
+The Ulendo plugin and it's associated components can be installed via a GUI installer. The process steps are outlined below. 
 
 ## Windows Installation Package: 
 Locate the downloaded ulendohc_setup.exe file
 
-1. Follow the onscreen steps provided via the GUI based installer
-2. Select a directory to install the ulendohc plugin into, and note the directory for future use.
+This installer requires administrative privileges to be installed as a shared resource. After running the executable, you will be prompted to grant the installer administrative privileges.
+![Administrative prompt to install the application.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/installer-prompt.png)
 
-After installation, the installation folder will contain app.exe - a executeable application that is a self contained python applications which the python runtime and the dependent packages that are required for the core of the smartScan application. 
+
+Unless you have made edits to the examples contained within the folder, it is recommended that users perform a clean installation of the application.
+
+![Perform a clean installation of the application.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/clean-installation.png)
+
+1. Follow the onscreen steps provided via the GUI based installer
+2. Select a directory to install the Ulendo HC plugin into, and note the directory for future use.
+
+After installation, the installation folder will contain app.exe - a executeable application that is a self contained python applications which the python runtime and the dependent packages that are required for the core of the Ulendo HC application. 
 
 This installation folder also includes a python plugin "ulendohc" which will be installed into the python environment. After the files are extracted the installer will attempt to install the python plugin into the Dyndrite environment using the following powershell command.
 
