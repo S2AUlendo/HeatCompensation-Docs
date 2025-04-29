@@ -21,7 +21,7 @@ For ease of use you can open these examples directly from your favorite python e
 
 ![VSCode with Ulendo HC examples folder.](https://s2aulendo.github.io/HeatCompensation-Docs/assets/images/UlendoHC_Examples_Editor.png)
 
-# Thermal Uniformity
+## Thermal Uniformity
 The objective of the Ulendo HC algorithm is to improve the thermal uniformity of each layer. 
 
 When successfully launched, the plugin will provide an overall metric on the improvement of the relative thermal uniformity for each layer that it processes. 
