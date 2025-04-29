@@ -8,14 +8,17 @@ nav_order: 5
 
 # A complete build using the plugin. 
 Integrating the UlendoHC optimizations into your workflow is simple. With only a few lines of code, it can be easily adapted into existing build files.
-In the example below, all of the changes required to integrate UlendoHc are marked using:
+In the example below, all of the changes required to integrate UlendoHC are marked using:
 ```python
 ############################
 ```
 
+The complete code for the example shown below is also available in the examples folder of the UlendoHC installation directory.
+
 ```python
 import time, os, sys, math
 from pathlib import Path
+
 ############################
 ### ULENDO HC OPTIMIZER ####
 import ulendohc.LPBFWrapper as ss
@@ -300,6 +303,6 @@ dyn.gui.vector_slice_viewer.center_on_point(tab_id=tab_id, point=(0, 0), zoom_le
 
 ```
 
-Integrating UlendoHc into your workflow is simple
+Integrating UlendoHc into your workflow is simple.
 
 
