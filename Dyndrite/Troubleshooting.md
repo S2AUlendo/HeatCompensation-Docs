@@ -3,7 +3,7 @@ layout: default
 title: Troubleshooting
 description: "Troubleshooting common issues with the Ulendo HC plugin."
 parent: Dyndrite
-nav_order: 6
+nav_order: 7
 ---
 
 # How to identify and troubleshoot common faults 
