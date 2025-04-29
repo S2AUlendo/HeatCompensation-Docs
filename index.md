@@ -4,13 +4,28 @@ layout: home
 nav_order: 1
 ---
 
-# Ulendo HC (Heat Compensation)
+# Ulendo HC
 
-The Ulendo HC Desktop Application derives from the *compensation-based* technologies for additive manufacturing developed by Ulendo Technologies, Inc.. The underlying algorithm in Ulendo HC optimizes the performance of Laser Power Bed Fusion (LPBF) printers. The technology is available in this desktop application and also as a plugin to Additive Manufacturing software platforms such as Dyndrite LPBF.
+These site provides an overview of the Heat Compensation plugin developed by Ulendo. 
 
-Parts produced by metal LPBF printers are prone to residual stress, deformation cracks and other quality defects due to uneven temperature distribution during the printing process. To address this issue, Ulendo has developed an algorithm that optimizes the laser scan sequence resulting in a 50% reduction in mean deformation and 88% reduction in residual stress. Instead of using a trial-and-error approach to selecting a heuristic scan sequence (e.g., stripe, chessboard, spiral), Ulendo HC automatically develops a custom scan sequence based on the geometry of the part and the metal being used. Using a physics model-based and optimization-driven approach, Ulendo HC achieves higher part quality than using heuristics.
+## Heat Compensation by Ulendo
+This heat compensation plugin is a part of the *compensation-based* technologies for additive manufacturing being developed by Ulendo. The heat compensation plugin is targeted specifically towards the optimizing the performance of Laser Power Bed Fusion (LPBF) machines.
 
-For the Ulendo HC Desktop Application, a user selects a CLI file for the part to be printed as well as the metal to be used for the part and then selects PROCESS to create an optimized CLI file to be used in the LPBF printing process. The user can examine a layer-by-layer representation of the temperature gradients in the part.   The application can be enhanced to accommodate additional file types.
+Parts produced by LPBF are prone to residual stress, deformation, cracks and other quality defects due to uneven temperature distribution during the LPBF process. To address this issue, Ulendo has developed a new Heat Compensation Plugin (HC), which provides a method for determining laser scan sequence in LPBF using a model-based and optimization-driven approach, rather than using heuristics. 
+
+This site provides an overview of how this the HC plugin can be integrated and used to optimize arbitrary 3D geometries
+
+### What does the Ulendo Heat Compensation Plugin Do?
+The Ulendo Heat compensation plugin is designed to help reduce residual stress, and the resulting part deformation that can result from heat stress. In certain limited benchmarks, HC was able to reduce the heat stress and residual stress by up to 90% for certain geometries. 
+
+### Who is the Ulendo Heat Compensation plugin targeted to?
+This plugin is can be easily integrated into the slicing software for LBPF machines. Alternatively, this optimization can be adapted to run in realtime, on the build processors of LPBF machines.
+
+The Ulendo Heat Compensation plugin is based on the SmartScan algorithm developed at the University of Michigan's Sustainable Automation Laboratory.
+
+You can read more about the performance of smartScan through technical papers available here:
+
+- Generalized SmartScan: An Intelligent LPBF Scan Sequence Optimization Approach for 3D Part Geometries by Chuan He, Bircan Bugdayci, Chinedum Okwudire. doi: 10.20944/preprints202311.0153.v1
 
 [Ulendo]: https://www.ulendo.io/
 [Just the Docs]: https://just-the-docs.github.io/just-the-docs/
