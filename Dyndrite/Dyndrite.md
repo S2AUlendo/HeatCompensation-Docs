@@ -7,14 +7,15 @@ nav_order: 2
 ---
 
 # Dyndrite LPBF Integration
-This section provides an overview of how the Heat compensation plugin developed by Ulendo can be used with the Dyndrite LPBF system. 
+The Ulendo HC plugin can be used with the Dyndrite LPBF Pro in two ways. 
 
-For ease of integration the Ulendo HC plugin has been developed as a python module which can be directly installed in the Dyndrite python environment. 
+1. Via the GUI interface
+2. Via the programming interface
 
-## Usage 
-The package can be used from either from the slicer callback or run directly from a standalone Python script. 
+Both of these options present the same functionality, and can be used interchangeably based on the users' preference. 
 
-### Standalone Mode
+
+### Advanced usage the API Interface
 There are three essential components to using the Ulendo HC plugin with the LPBF Pro framework
 
 1. Import the Ulendo HC package

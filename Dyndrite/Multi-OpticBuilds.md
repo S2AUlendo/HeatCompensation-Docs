@@ -1,7 +1,7 @@
 ---
 layout: default
 title: MultiOptic
-description: "Uses Ulendo HC when running multi-optic builds"
+description: "Ulendo HC and multi-optic builds"
 parent: Dyndrite
 nav_order: 3
 ---
